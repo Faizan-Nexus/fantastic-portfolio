@@ -1,263 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Faizan — Computer Systems Engineer specializing in ML pipeline development, DSP-based feature engineering, and hardware-software integration.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./assets/images/dp.png" type="image/x-icon">
-    <title>My Portfolio</title>
+    <link rel="shortcut icon" href="./assets/images/dp.jpeg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Muhammad Faizan — ML Engineer Portfolio</title>
 </head>
-
 <body>
-    <!-- Header -->
-    <section id="header">
-        <div class="header container">
-            <div class="nav-bar">
-                <div class="brand">
-                    <a href="#hero">
-                        <h1><span>M</span>uhammad <span>F</span>aizan</h1>
-                    </a>
-                </div>
-                <div class="nav-list">
-                    <div class="hamburger">
-                        <div class="bar"></div>
+
+    <!-- ========== HEADER / NAV ========== -->
+    <header id="header">
+        <div class="header-inner">
+            <div class="brand"><a href="#home"><span>M</span>uhammad <span>F</span>aizan</a></div>
+            <nav class="nav-list">
+                <div class="hamburger" id="hamburger"><div class="bar"></div></div>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon-light" title="Switch to dark">Light</span>
+                <span class="theme-icon-dark" title="Switch to light">Dark</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HOME / PROFILE ========== -->
+    <section id="home">
+        <div class="profile-container">
+            <!-- Top row: avatar + stats -->
+            <div class="profile-top">
+                <div class="avatar-wrapper">
+                    <div class="avatar-ring">
+                        <img src="./assets/images/dp.jpeg" alt="Muhammad Faizan" class="avatar-img">
                     </div>
-                    <ul>
-                        <li><a href="#hero" data-after="Home">Home</a></li>
-                        <li><a href="#services" data-after="Service">Services</a></li>
-                        <li><a href="#projects" data-after="Projects">Projects</a></li>
-                        <li><a href="#about" data-after="About">About</a></li>
-                        <li><a href="#contact" data-after="Contact">Contact</a></li>
-                    </ul>
                 </div>
+                <div class="stats-block">
+                    <div class="stat-item"><span class="stat-number" data-target="7">0</span><span class="stat-label">Projects</span></div>
+                    <div class="stat-item"><span class="stat-number" data-target="6">0</span><span class="stat-label">Certifications</span></div>
+                    <div class="stat-item"><span class="stat-number" data-target="2">0</span><span class="stat-label">Publications</span></div>
+                </div>
+            </div>
+            <!-- Bio -->
+            <div class="profile-bio">
+                <h1 class="profile-name">Muhammad Faizan</h1>
+                <p class="profile-title">Computer Systems Engineer</p>
+                <p class="profile-desc">Specializing in ML pipeline development, DSP-based feature engineering, and hardware-software integration. Experienced in building and deploying end-to-end ML systems from data ingestion through real-time inference on both embedded devices and cloud-connected architectures.</p>
+            </div>
+            <!-- Action buttons -->
+            <div class="profile-actions">
+                <a href="./assets/FResume.pdf" download class="btn-pill" id="btn-cv">Download CV</a>
+                <a href="#" class="btn-pill btn-outline" id="btn-github">GitHub</a>
+                <a href="#" class="btn-pill btn-outline" id="btn-linkedin">LinkedIn</a>
+                <a href="#" class="btn-pill btn-outline" id="btn-kaggle">Kaggle</a>
             </div>
         </div>
     </section>
-    <!-- End Header -->
 
-
-    <!-- Hero Section  -->
-    <section id="hero">
-        <div class="hero container">
-            <div>
-                <h1>Hello, <span></span></h1>
-                <h1>My Name is <span></span></h1>
-                <h1>Muhammad Faizan <span></span></h1>
-                <a href="./assets/SourceCode.zip" target="_blank" type="button" class="cta" target="_blank">Portfolio</a>
-            </div>
-        </div>
-    </section>
-    <!-- End Hero Section  -->
-
-    <!-- Service Section -->
-    <section id="services">
-        <div class="services container">
-            <div class="service-top">
-                <h1 class="section-title">Serv<span>i</span>ces</h1>
-                <p>I excel in programming with Arduino, C++, and Python, delivering efficient and innovative solutions. My skills include embedded systems development, software programming, and data analysis. While Machine Learning is a future focus, I bring
-                    a strong foundation and experience in academic and personal projects.</p>
-            </div>
-            <div class="service-bottom">
-                <div class="service-item" onclick="window.location.href='https://www.fiverr.com/s/2K1jr2X'">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
-                    <h2>Software Programming</h2>
-                    <p>Specializing in software development with C++ and Python. I provide robust and scalable software solutions for various applications.</p>
+    <!-- ========== SKILLS (Highlights + Project Grid) ========== -->
+    <section id="skills">
+        <div class="section-container">
+            <!-- Highlight circles -->
+            <div class="highlights-row">
+                <div class="highlight-item">
+                    <div class="highlight-circle"><img src="./assets/images/DL_Certficate.png" alt="Deep Learning"></div>
+                    <p>Deep Learning</p>
                 </div>
-                <div class="service-item" onclick="window.location.href='https://www.fiverr.com/s/wkqxzpg'">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
-                    <h2>Embedded Systems Development</h2>
-                    <p>Offering expertise in designing and developing embedded systems using Arduino and C++. I create efficient solutions tailored to your needs.</p>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><img src="./assets/images/ML_Certificate.png" alt="Machine Learning"></div>
+                    <p>Machine Learning</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><img src="./assets/images/DSP_Certificate.png" alt="DSP"></div>
+                    <p>Signal Processing</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><img src="./assets/images/Kaggle_Certificate.png" alt="Kaggle"></div>
+                    <p>Python / Kaggle</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-circle"><img src="./assets/images/icbeem_certificate.png" alt="iCBEEM"></div>
+                    <p>iCBEEM Paper</p>
                 </div>
             </div>
-            <a href="https://www.fiverr.com/users/faizanprogramms/seller_dashboard" class="cta" target="_blank">Avail the Service</a>
-        </div>
-    </section>
-    <!-- End Service Section -->
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="projects container">
-            <div class="projects-header">
-                <h1 class="section-title">Recent <span>Projects</span></h1>
+            <!-- Section tab bar (like Instagram grid/reels/tagged tabs) -->
+            <div class="tab-bar">
+                <button class="tab-btn active" data-tab="projects-grid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="0" y="0" width="10" height="10"/><rect x="14" y="0" width="10" height="10"/><rect x="0" y="14" width="10" height="10"/><rect x="14" y="14" width="10" height="10"/></svg>
+                    PROJECTS
+                </button>
+                <button class="tab-btn" data-tab="certs-grid">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 8.5L22 9.5L17 14.5L18.5 22L12 18.5L5.5 22L7 14.5L2 9.5L9 8.5Z"/></svg>
+                    CERTIFICATIONS
+                </button>
             </div>
-            <div class="all-projects">
+
+            <!-- Projects Grid -->
+            <div class="content-grid" id="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Smart Gesture Glove</h1>
-                        <h2>Transforming Gestures into Words</h2>
-                        <p>A smart glove project that uses flex sensors, Arduino, and python and Matlab to recognize hand gestures and translate them into meaningful words. It combines embedded systems programming with real-time data processing. </p>
-                        <a href="https://github.com/Faizan-Nexus/Smart-Gesture-Glove-Translating-Hand-Gestures-into-Words" class="explore-btn">Explore the Project</a>
-                    </div>
-                    <div class="project-img">
-                        <a href="https://github.com/Faizan-Nexus/Smart-Gesture-Glove-Translating-Hand-Gestures-into-Words">
-                            <img src="./assets/images/project1.jpeg" alt="Smart Gesture Glove">
-                        </a>
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>AI Lead Intelligence</h3>
+                        <p class="card-tech">Python · Flask · Groq Llama 3.3 · n8n · SQLite</p>
+                        <p class="card-desc">End-to-end ML data pipeline with CSV ingestion, LLM-based feature extraction, lead scoring 1–10, and live Flask dashboard.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="leadIntelligence-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="leadIntelligence-demo">Live Demo</a>
+                        </div>
                     </div>
                 </div>
-
                 <!-- Project 2 -->
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Sechdule Managment System</h1>
-                        <h2>C++ based University Schedule Management System </h2>
-                        <p>SchedEase is a C++ console app that displays your daily class schedule. Enter a day to view subjects, instructors, timings, and room details. Group-specific schedules (X/Y) and break times are included. With input validation and
-                            clear formatting, SchedEase helps you stay organized and manage your routine effortlessly.</p>
-                        <a href="https://github.com/Faizan-Nexus/SchedEase--C-Project" class="explore-btn">Explore the Project</a>
-                    </div>
-                    <div class="project-img">
-                        <a href="https://github.com/Faizan-Nexus/SchedEase--C-Project">
-                            <img src="./assets/images/C++.jpeg" alt="Sechdule Managment System">
-                        </a>
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>ViT Lung Disease Classification</h3>
+                        <p class="card-tech">PyTorch · ViT · Grad-CAM · Medical Imaging</p>
+                        <p class="card-desc">Vision Transformer achieving 91.27% accuracy on chest X-ray datasets with Grad-CAM attention visualization for interpretability.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="vitLung-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="vitLung-demo">Live Demo</a>
+                        </div>
                     </div>
                 </div>
-
                 <!-- Project 3 -->
-                <div class="project-item">
-                    <div class="project-info">
-                        <h1>Home Automation System</h1>
-                        <h2>IOT based Home Automation using Packet Tracer</h2>
-                        <p>An IOT Based Home Automation simulation project designed in CISCO Packet Tracer. It enables users to remotely control home appliances. The system uses network communication protocols to send and receive control signals, allowing
-                            seamless interaction between the user and devices..</p>
-                        <a href="https://github.com/Faizan-Nexus/Home-Automation-Packet-Tracer" class="explore-btn">Explore the Project</a>
-                    </div>
-                    <div class="project-img">
-                        <a href="https://github.com/Faizan-Nexus/Home-Automation-Packet-Tracer">
-                            <img src="./assets/images/Automation.jpeg" alt="IOT based Home Automation">
-                        </a>
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>Urdu Speech Emotion Detection</h3>
+                        <p class="card-tech">Python · MFCC · Wavelet Transform · DSP</p>
+                        <p class="card-desc">MFCC feature extraction from raw Urdu speech, wavelet-based denoising, and emotion classifier — full DSP pipeline.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="urduSpeech-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="urduSpeech-demo">Live Demo</a>
+                        </div>
                     </div>
                 </div>
+                <!-- Project 4 -->
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>IoT Anomaly Detection</h3>
+                        <p class="card-tech">Python · Scikit-learn · Isolation Forest</p>
+                        <p class="card-desc">Unsupervised anomaly detection for continuous IoT sensor streams with precision/recall evaluation on labelled fault events.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="iotAnomaly-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="iotAnomaly-demo">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>PSL Win Probability Engine</h3>
+                        <p class="card-tech">XGBoost · LightGBM · PyTorch · Ensemble</p>
+                        <p class="card-desc">Hybrid ensemble with time-aware win probability simulation; cricket-domain feature engineering including run rate deltas and team strength.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="pslCricket-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="pslCricket-demo">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>Smart Glove</h3>
+                        <p class="card-tech">Arduino · C++ · Sensor Fusion · Real-Time</p>
+                        <p class="card-desc">Embedded ML gesture translator combining flex sensors and IMU with sub-50ms latency C++ inference on Arduino.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="smartGlove-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="smartGlove-demo">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="grid-card">
+                    <div class="card-overlay">
+                        <h3>Real-Time Gesture Recognition</h3>
+                        <p class="card-tech">Python · MediaPipe · OpenCV</p>
+                        <p class="card-desc">MediaPipe-based gesture detection pipeline at ~30 FPS on CPU with latency budgeting and bottleneck elimination.</p>
+                        <div class="card-links">
+                            <a href="#" class="card-btn" data-link="gestureRecognition-github">GitHub</a>
+                            <a href="#" class="card-btn card-btn-demo" data-link="gestureRecognition-demo">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Explore More Button -->
-                <div class="explore-more">
-                    <a href="https://github.com/Faizan-Nexus" class="explore-more-btn" target="_blank">Explore More Projects</a>
+            <!-- Certifications Grid (hidden by default) -->
+            <div class="content-grid hidden" id="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-img-wrapper"><img src="./assets/images/DL_Certficate.png" alt="Deep Learning Certificate"></div>
+                    <div class="cert-inner">
+                        <h4>Deep Learning Specialization</h4>
+                        <p>DeepLearning.AI / Andrew Ng — 2025</p>
+                        <p class="cert-detail">5 courses: DNNs, CNNs, Sequence Models, ML Strategy, NLP</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-img-wrapper"><img src="./assets/images/ML_Certificate.png" alt="Machine Learning Certificate"></div>
+                    <div class="cert-inner">
+                        <h4>Machine Learning Specialization</h4>
+                        <p>DeepLearning.AI / Andrew Ng — 2024</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-img-wrapper"><img src="./assets/images/DSP_Certificate.png" alt="DSP Certificate"></div>
+                    <div class="cert-inner">
+                        <h4>Digital Signal Processing</h4>
+                        <p>EPFL / Coursera</p>
+                        <p class="cert-detail">Signal theory, filtering, spectral analysis, DTFT, z-transforms</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-inner">
+                        <h4>MATLAB &amp; Simulink</h4>
+                        <p>Coursera</p>
+                        <p class="cert-detail">Model-based design, simulation, algorithm prototyping</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-img-wrapper"><img src="./assets/images/Kaggle_Certificate.png" alt="Kaggle Certificate"></div>
+                    <div class="cert-inner">
+                        <h4>Python</h4>
+                        <p>Kaggle</p>
+                        <p class="cert-detail">Data manipulation, pipelines, applied ML</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Projects Section -->
 
-    <!-- About Section -->
-    <section id="about">
-        <h1 class="section-title">About <span>Me</span></h1>
-        <div class="about container">
-            <div class="col-left">
-                <div class="about-img">
-                    <div class="circle-img">
-                        <img src="./assets/images/dp.png" alt="Author Image">
-                    </div>
-                    <p class="author-description">A passionate Computer System Engineer with a strong interest in Machine Learning. Enthusiastic about learning and advancing in ML, with skills in Go, C++, Arduino, and Python. Driven to pursue a PhD in Machine Learning.</p>
-                </div>
-            </div>
-            <div class="col-right">
-                <!-- <h1 class="section-title">About <span>Me</span></h1> -->
-                <div class="tab-container">
-                    <div class="tab-header">
-                        <div class="tab" data-tab="education">Personal</div>
-                        <div class="tab" data-tab="personal-info">Education</div>
-                        <div class="tab" data-tab="skills">Skills</div>
-                    </div>
-                    <div class="tab-content">
-                        <div class="content" id="education">
-                            <h2>Personal Info</h2>
-                            <ul>
-                                <li>Name: Muhammad Faizan Anjum Shah</li>
-                                <li>Experience: Begginer</li>
-                                <li>Current Occupation: Student</li>
-                                <li>Goals: PhD in ML</li>
-                                <li>Location: Pakistan</li>
-                            </ul>
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience">
+        <div class="section-container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Visualization &amp; ML Pipeline Associate Intern</h3>
+                            <span class="timeline-date">Jul – Aug 2025</span>
                         </div>
-                        <div class="content" id="personal-info">
-                            <h2>Education</h2>
-                            <ul>
-                                <li>BE-CSE, Sukkur IBA University</li>
-                                <li>HSSC, MTB College Sadiqabad</li>
-                                <li>SSC, MTB Schools Sadiqabd</li>
-                                <li>Current: 5th Sem (CSE)</li>
-                            </ul>
-                        </div>
-                        <div class="content" id="skills">
-                            <h2>Skills</h2>
-                            <ul>
-                                <li>Arduino UNO</li>
-                                <li>C++</li>
-                                <li>Go lang</li>
-                                <li>Frontend Developer</li>
-                                <li>Machine Leraning</li>
-                                <li>Matlab</li>
-                                <li>Python</li>
-                            </ul>
-                        </div>
+                        <p class="timeline-company">Excelerate — Remote</p>
+                        <ul class="timeline-list">
+                            <li>Ingested, cleaned, and validated 1M+ rows across six heterogeneous datasets; engineered a schema-reconciled master table for downstream reporting.</li>
+                            <li>Built interactive KPI dashboards in Looker Studio with drill-down filters and automated chart refresh.</li>
+                            <li>Applied completeness, range, and consistency checks before aggregation.</li>
+                        </ul>
                     </div>
                 </div>
-                <a href="./assets/FResume.pdf" download class="cta">Grab CV</a>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Co-Trainer, Generative AI Workshop</h3>
+                            <span class="timeline-date">2025</span>
+                        </div>
+                        <p class="timeline-company">Sukkur IBA University</p>
+                        <ul class="timeline-list">
+                            <li>Assisted learners with LLM fine-tuning, LoRA/QLoRA optimization, few-shot prompting, and diffusion-based image generation.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- End About Section -->
 
-    <!-- Contact Section -->
+    <!-- ========== PUBLICATIONS ========== -->
+    <section id="publications">
+        <div class="section-container">
+            <h2 class="section-title">Publications</h2>
+            <div class="pub-grid">
+                <!-- Publication 1: iCBEEM -->
+                <div class="pub-card pub-clickable" id="pub-icbeem">
+                    <div class="pub-badge">
+                        <img src="./assets/images/icbeem_sibau.png" alt="iCBEEM Logo">
+                        <span class="pub-conf">iCBEEM 2026</span>
+                    </div>
+                    <h3>Artificial Intelligence for Sustainable Entrepreneurship and Innovation</h3>
+                    <p class="pub-venue">Presented at iCBEEM 2026, Sukkur IBA University — January 2026</p>
+                    <p class="pub-tagline">AI for resilient SMEs: Triple Helix framework driving measurable sustainability gains.</p>
+                    <p class="pub-click-hint">Click to read abstract</p>
+                    <div class="pub-abstract hidden">
+                        <p>In Pakistan, small and medium-sized enterprises (SMEs) and startups are essential to economic growth and contribute nearly 40% to GDP while creating significant employment opportunities, but they face persistent challenges. The lack of access to capital, business inefficiency, low innovation capacity, and poor data management all hamper competitiveness, while weak connections between academia, industry, and government limit knowledge transfer and the dissemination of innovation. This paper proposes a multi-dimensional theoretical framework that combines the Triple Helix model of academia–industry–government collaboration with Sustainable Development Goal (SDG)-driven entrepreneurship to address these challenges. This approach focuses on knowledge creation, digital transformation, and the application of circular economy principles to enhance efficiency and resource adaptability. Artificial Intelligence (AI) is identified as a major turning point within this paradigm. AI-powered tools and predictive analytics can empower SMEs by improving market forecasting, streamlining operations, and enhancing customer engagement. These technologies optimize resource use, reduce waste, and strengthen financial risk management. Moreover, AI-facilitated platforms bridge the gap between startups and investors, simplify skill development through intelligent learning systems, and guide data-driven policy design. The conclusion of this analysis emphasizes that embedding AI into Pakistan’s entrepreneurial ecosystem can foster sustainable innovation and inclusive growth. By integrating AI-powered strategies with SDG goals, SMEs in Pakistan can become increasingly competitive and resilient. Finally, such incorporation of AI is vital for driving long-term economic progress and international competitiveness in emerging economies.</p>
+                    </div>
+                </div>
+                <!-- Publication 2: ICoMET -->
+                <div class="pub-card pub-clickable" id="pub-icomet">
+                    <div class="pub-badge">
+                        <img src="./assets/images/icomet_logo.png" alt="ICoMET Logo">
+                        <span class="pub-conf">ICoMET 2026</span>
+                    </div>
+                    <h3>Evaluating Deep Learning and Hybrid Quantum Algorithms for Lung Disease Classification</h3>
+                    <p class="pub-venue">Accepted to IEEE Xplore, ICoMET 2026, Sukkur IBA University — May 2026</p>
+                    <p class="pub-tagline">Vision Transformers and quantum-inspired features for robust multi-class lung diagnosis.</p>
+                    <p class="pub-click-hint">Click to read abstract</p>
+                    <div class="pub-abstract hidden">
+                        <p>The lungs are vital organs of the human body, and lung diseases like Covid-19, pneumonia, and TB are major health concerns. Advancements in AI and deep learning have transformed medical image diagnosis that helps in early detection of disease and diagnosis. This study compares standard deep learning techniques with hybrid quantum models to identify four lung diseases which include TB, COVID-19, Viral Pneumonia and Bacterial Pneumonia. Basic Machine Learning (ML) models like Support Vector Machine (SVM) and advance deep learning architectures such as Convolutional Neural Network (CNN), Vision Transformer (ViT), Residual Neural Network (ResNet 50), Visual Graphic Geometry (VGG-16), Efficient-NetB0 and hybrid architectures such as Hybrid Quantum Convolutional Neural Network (HQCNN) and Hybrid Quantum Support Vector Machine (HQSVM) are employed in this study. The models are trained both from scratch and through transfer learning depending on their respective architecture. Evaluation results indicate that the ViT achieves the best classification performance, while HQSVM demonstrates superior performance against different deep learning models such as Efficient-NetB0 and VGG-16 which demonstrates that hybrid quantum approaches hold promise for medical imaging tasks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXTRA CURRICULAR ACTIVITIES ========== -->
+    <section id="activities">
+        <div class="section-container">
+            <h2 class="section-title">Extra Curricular Activities</h2>
+            <div class="activities-grid">
+                <!-- Startup Pitch -->
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="./assets/images/Waste Management System.jpg" alt="Waste Management System Pitch">
+                    </div>
+                    <div class="activity-body">
+                        <div class="activity-badge">Startup Pakistan</div>
+                        <h3>Waste Management System — Startup Pitch</h3>
+                        <p class="activity-meta">Pitched at Startup Pakistan, organized by See Pakistan — June 2025</p>
+                        <p class="activity-desc">Pitched a data-driven organic waste management solution that enables users to turn their organic waste into cash. The platform features location-based collection requests, weight-based payments, scheduled pickups, a user dashboard for tracking environmental impact, and in-app guides. Collected waste is converted into biogas and fertilizer, contributing to environmental sustainability while financially incentivizing users.</p>
+                        <div class="activity-cert">
+                            <p class="activity-cert-label">Certificate of Participation</p>
+                            <img src="./assets/images/Waste Management System.jpg" alt="See Pakistan Certificate" class="activity-cert-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science Society -->
+                <div class="activity-card">
+                    <div class="activity-body">
+                        <div class="activity-badge">University Society</div>
+                        <h3>Active Member — Data Science Society</h3>
+                        <p class="activity-meta">Sukkur IBA University</p>
+                        <p class="activity-desc">Participated in peer-led ML projects, workshops, and knowledge-sharing initiatives within the university's Data Science Society.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== CONTACT ========== -->
     <section id="contact">
-        <div class="contact container">
-            <div>
-                <h1 class="section-title">Contact <span>info</span></h1>
-            </div>
-            <div class="contact-items">
-                <div class="contact-item">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
-                    <div class="contact-info">
-                        <h1>Phone</h1>
-                        <h2>+92 303 8534264</h2>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
-                    <div class="contact-info">
-                        <h1>Email</h1>
-                        <h2>mohtramfaiza@gmail.com</h2>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
-                    <div class="contact-info">
-                        <h1>Address</h1>
-                        <h2>Sadiqabad , Punjab , Pakistan</h2>
-                    </div>
-                </div>
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Feel free to reach out for collaborations, research opportunities, or just to connect.</p>
+            <div class="contact-row">
+                <a href="mailto:mohtramfaizan@gmail.com" class="contact-link" id="contact-email">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                    <span>mohtramfaizan@gmail.com</span>
+                </a>
+                <a href="#" class="contact-link" id="contact-linkedin">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span>Connect on LinkedIn</span>
+                </a>
             </div>
         </div>
     </section>
-    <!-- End Contact Section -->
 
-    <!-- Footer -->
-    <section id="footer">
-        <div class="footer container">
-            <div class="brand">
-                <h1><span>M</span>uhammad <span>F</span>aizan</h1>
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="brand"><span>M</span>uhammad <span>F</span>aizan</div>
+            <p class="footer-tagline">Computer Systems Engineer · ML Pipeline Developer</p>
+            <div class="social-row">
+                <a href="#" class="social-link" id="footer-github"><img src="./assets/icons/github.png" alt="GitHub"></a>
+                <a href="#" class="social-link" id="footer-linkedin"><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
+                <a href="#" class="social-link" id="footer-kaggle">
+                    <svg class="kaggle-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.281.18.046.149.034.238-.036.27l-6.555 6.344 6.836 8.508c.095.104.117.208.075.322z"/></svg>
+                </a>
             </div>
-            <h2>A Passionate Engineer</h2>
-            <div class="social-icon">
-                <div class="social-item">
-                    <a href="https://www.linkedin.com/in/muhmad-faizan-anjum-shah-78233a253/" target="_blank"><img src="./assets/icons/linkedin.png" /></a>
-                </div>
-                <div class="social-item">
-                    <a href="https://github.com/Faizan-Nexus" target="_blank"><img src="./assets/icons/github.png" /></a>
-                </div>
-                <div class="social-item">
-                    <a href="https://youtube.com/@faizanalimuhammad-jn5ol?si=rj4oX9Gdf3VeVjXX" target="_blank"><img src="./assets/icons/youtube.png" /></a>
-                </div>
-                <div class="social-item">
-                    <a href="https://www.reddit.com/u/Inside_Ambassador418/s/l8UxVbVkUZ" target="_blank"><img src="./assets/icons/reddit.png" /></a>
-                </div>
-            </div>
-            <p>Copyright © 2024 Faizan. All rights reserved</p>
+            <p class="copyright">© 2026 Muhammad Faizan. All rights reserved.</p>
         </div>
-    </section>
-    <!-- End Footer -->
-    <script src="./index.js"></script>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <img src="" alt="Full view" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <script src="config.js"></script>
+    <script src="index.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,17 @@
+# Private config (contains real URLs)
+.env
+config.js
+
+# Personal images (profile pic, certificates, etc.)
+assets/images/dp.jpeg
+assets/images/DL_Certficate.png
+assets/images/ML_Certificate.png
+assets/images/DSP_Certificate.png
+assets/images/Kaggle_Certificate.png
+assets/images/icbeem_certificate.png
+assets/images/icbeem_sibau.png
+assets/images/icomet_logo.png
+assets/images/Waste Management System.jpg
+
+# Resume
+assets/FResume.pdf
