@@ -14,9 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
         set("btn-linkedin",    CONFIG.LINKEDIN_URL);
         set("btn-kaggle",      CONFIG.KAGGLE_URL);
         set("footer-github",   CONFIG.GITHUB_URL);
-        set("footer-linkedin", CONFIG.LINKEDIN_URL);
-        set("footer-kaggle",   CONFIG.KAGGLE_URL);
         set("contact-linkedin", CONFIG.LINKEDIN_URL);
+
+        // Inject Images
+        if (CONFIG.IMAGES) {
+            const setImg = (id, src) => {
+                const el = document.getElementById(id);
+                if (el && src) el.src = src;
+            };
+            setImg("img-profile",     CONFIG.IMAGES.profile_photo);
+            setImg("hl-dl",           CONFIG.IMAGES.cert_dl);
+            setImg("hl-ml",           CONFIG.IMAGES.cert_ml);
+            setImg("hl-dsp",          CONFIG.IMAGES.cert_dsp);
+            setImg("hl-python",       CONFIG.IMAGES.cert_python);
+            setImg("hl-icbeem",       CONFIG.IMAGES.cert_icbeem_h);
+            setImg("cert-dl",         CONFIG.IMAGES.cert_dl);
+            setImg("cert-ml",         CONFIG.IMAGES.cert_ml);
+            setImg("cert-dsp",        CONFIG.IMAGES.cert_dsp);
+            setImg("cert-python",     CONFIG.IMAGES.cert_python);
+            setImg("logo-icbeem",      CONFIG.IMAGES.logo_icbeem);
+            setImg("logo-icomet",      CONFIG.IMAGES.logo_icomet);
+            setImg("img-pitch-waste", CONFIG.IMAGES.pitch_waste);
+            setImg("cert-pitch-waste", CONFIG.IMAGES.pitch_waste);
+        }
 
         // Project card links
         document.querySelectorAll("[data-link]").forEach(el => {
