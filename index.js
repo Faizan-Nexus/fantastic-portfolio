@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (el && src) el.src = src;
             };
             setImg("img-profile",     CONFIG.IMAGES.profile_photo);
-            setImg("hl-icbeem",       CONFIG.IMAGES.cert_icbeem_h);
-            setImg("cert-dl",         CONFIG.IMAGES.cert_dl);
-            setImg("cert-ml",         CONFIG.IMAGES.cert_ml);
-            setImg("cert-dsp",        CONFIG.IMAGES.cert_dsp);
-            setImg("cert-python",     CONFIG.IMAGES.cert_python);
+            setImg("cert-dl",          CONFIG.IMAGES.cert_dl);
+            setImg("cert-ml",          CONFIG.IMAGES.cert_ml);
+            setImg("cert-dsp",         CONFIG.IMAGES.cert_dsp);
+            setImg("cert-python",      CONFIG.IMAGES.cert_python);
+            setImg("cert-icbeem",      CONFIG.IMAGES.cert_icbeem_h);
             setImg("logo-icbeem",      CONFIG.IMAGES.logo_icbeem);
             setImg("logo-icomet",      CONFIG.IMAGES.logo_icomet);
-            setImg("img-pitch-waste", CONFIG.IMAGES.pitch_waste);
+            setImg("img-pitch-waste",  CONFIG.IMAGES.pitch_waste);
             setImg("cert-pitch-waste", CONFIG.IMAGES.pitch_waste);
         }
 
@@ -55,12 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
             if (cvBtn) cvBtn.href = CONFIG.RESUME_PATH;
         }
 
-        /* ---- Certificate Slider for highlights ---- */
+        /* ---- Certificate Slider for highlights circle ---- */
         const certImgs = [
             CONFIG.IMAGES.cert_dl,
             CONFIG.IMAGES.cert_ml,
             CONFIG.IMAGES.cert_dsp,
-            CONFIG.IMAGES.cert_python
+            CONFIG.IMAGES.cert_python,
+            CONFIG.IMAGES.cert_icbeem_h          // iCBEEM now included
         ].filter(Boolean);
 
         let currentCertIndex = 0;
@@ -68,6 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (certSliderImg && certImgs.length > 0) {
             certSliderImg.src = certImgs[0];
+
+            // Click on the circle → jump to next cert manually
+            const certCircle = document.getElementById("hl-cert-circle");
+            if (certCircle) {
+                certCircle.addEventListener("click", (e) => {
+                    e.stopPropagation(); // don't open lightbox
+                    certSliderImg.style.opacity = 0;
+                    setTimeout(() => {
+                        currentCertIndex = (currentCertIndex + 1) % certImgs.length;
+                        certSliderImg.src = certImgs[currentCertIndex];
+                        certSliderImg.style.opacity = 1;
+                    }, 300);
+                });
+            }
+
+            // Auto-rotate every 3 s
             setInterval(() => {
                 certSliderImg.style.opacity = 0;
                 setTimeout(() => {

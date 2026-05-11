@@ -372,9 +372,37 @@ ul { list-style: none; }
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Certificate slider circle — highlighted with accent border */
+/* Certificate slider circle — highlighted with accent border + pulse */
 .slider-circle {
     border: 2px solid var(--accent) !important;
+    position: relative;
+}
+
+/* Subtle pulse ring to signal "clickable" */
+.slider-circle::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--accent);
+    opacity: 0;
+    animation: cert-pulse 2.4s ease-out infinite;
+}
+
+@keyframes cert-pulse {
+    0%   { transform: scale(1);    opacity: 0.6; }
+    70%  { transform: scale(1.18); opacity: 0;   }
+    100% { transform: scale(1.18); opacity: 0;   }
+}
+
+/* "tap to switch" hint below label */
+.cert-click-hint {
+    font-size: 0.62rem;
+    color: var(--accent);
+    text-align: center;
+    margin-top: -3px;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
 }
 
 .highlight-item p {
