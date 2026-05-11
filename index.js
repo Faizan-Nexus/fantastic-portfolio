@@ -23,10 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (el && src) el.src = src;
             };
             setImg("img-profile",     CONFIG.IMAGES.profile_photo);
-            setImg("hl-dl",           CONFIG.IMAGES.cert_dl);
-            setImg("hl-ml",           CONFIG.IMAGES.cert_ml);
-            setImg("hl-dsp",          CONFIG.IMAGES.cert_dsp);
-            setImg("hl-python",       CONFIG.IMAGES.cert_python);
             setImg("hl-icbeem",       CONFIG.IMAGES.cert_icbeem_h);
             setImg("cert-dl",         CONFIG.IMAGES.cert_dl);
             setImg("cert-ml",         CONFIG.IMAGES.cert_ml);
@@ -57,6 +53,29 @@ document.addEventListener("DOMContentLoaded", () => {
         if (CONFIG.RESUME_PATH) {
             const cvBtn = document.getElementById("btn-cv");
             if (cvBtn) cvBtn.href = CONFIG.RESUME_PATH;
+        }
+
+        /* ---- Certificate Slider for highlights ---- */
+        const certImgs = [
+            CONFIG.IMAGES.cert_dl,
+            CONFIG.IMAGES.cert_ml,
+            CONFIG.IMAGES.cert_dsp,
+            CONFIG.IMAGES.cert_python
+        ].filter(Boolean);
+
+        let currentCertIndex = 0;
+        const certSliderImg = document.getElementById("hl-cert-slider");
+
+        if (certSliderImg && certImgs.length > 0) {
+            certSliderImg.src = certImgs[0];
+            setInterval(() => {
+                certSliderImg.style.opacity = 0;
+                setTimeout(() => {
+                    currentCertIndex = (currentCertIndex + 1) % certImgs.length;
+                    certSliderImg.src = certImgs[currentCertIndex];
+                    certSliderImg.style.opacity = 1;
+                }, 500);
+            }, 3000);
         }
     }
 
@@ -189,15 +208,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (current >= target) {
                     current = target;
                     clearInterval(interval);
+                    el.textContent = current + "+";
+                } else {
+                    el.textContent = current;
                 }
-                el.textContent = current;
             }, 40);
         });
     }
 
     /* ---- 5. Scroll-triggered fade-in + stat counter ---- */
     const fadeEls = document.querySelectorAll(
-        ".grid-card, .cert-card, .timeline-item, .pub-card, .contact-card"
+        ".grid-card, .cert-card, .timeline-item, .pub-card, .contact-link"
     );
     fadeEls.forEach(el => el.classList.add("fade-in"));
 

@@ -369,6 +369,12 @@ ul { list-style: none; }
     height: 100%;
     border-radius: var(--radius-full);
     object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Certificate slider circle — highlighted with accent border */
+.slider-circle {
+    border: 2px solid var(--accent) !important;
 }
 
 .highlight-item p {

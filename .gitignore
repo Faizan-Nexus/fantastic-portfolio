@@ -1,4 +1,2 @@
 # Private config (contains real URLs)
 .env
-config.js
-
