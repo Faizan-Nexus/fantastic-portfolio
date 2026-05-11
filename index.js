@@ -192,6 +192,64 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    /* ---- 3b. Certificate Carousel ---- */
+    (function initCertCarousel() {
+        const track     = document.getElementById("cert-track");
+        const prevBtn   = document.getElementById("cert-prev");
+        const nextBtn   = document.getElementById("cert-next");
+        const dotsWrap  = document.getElementById("cert-dots");
+        if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+        const slides = track.querySelectorAll(".cert-slide");
+        const dots   = dotsWrap.querySelectorAll(".cert-dot");
+        const total  = slides.length;
+        let current  = 0;
+
+        function goTo(idx) {
+            // Clamp
+            idx = Math.max(0, Math.min(total - 1, idx));
+            current = idx;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            // Update dots
+            dots.forEach((d, i) => d.classList.toggle("active", i === current));
+            // Arrow states
+            prevBtn.disabled = current === 0;
+            nextBtn.disabled = current === total - 1;
+        }
+
+        // Arrow clicks
+        prevBtn.addEventListener("click", () => goTo(current - 1));
+        nextBtn.addEventListener("click", () => goTo(current + 1));
+
+        // Dot clicks
+        dots.forEach(dot => {
+            dot.addEventListener("click", () => {
+                goTo(parseInt(dot.getAttribute("data-index"), 10));
+            });
+        });
+
+        // Touch / swipe support
+        let touchStartX = 0;
+        track.addEventListener("touchstart", e => {
+            touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        track.addEventListener("touchend", e => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+        }, { passive: true });
+
+        // Keyboard arrows when certs tab is visible
+        document.addEventListener("keydown", e => {
+            const certsGrid = document.getElementById("certs-grid");
+            if (!certsGrid || certsGrid.classList.contains("hidden")) return;
+            if (e.key === "ArrowLeft")  goTo(current - 1);
+            if (e.key === "ArrowRight") goTo(current + 1);
+        });
+
+        // Init
+        goTo(0);
+    })();
+
     /* ---- 4. Stat counter animation ---- */
     const statNumbers = document.querySelectorAll(".stat-number");
     let statsCounted = false;
@@ -218,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ---- 5. Scroll-triggered fade-in + stat counter ---- */
     const fadeEls = document.querySelectorAll(
-        ".grid-card, .cert-card, .timeline-item, .pub-card, .contact-link"
+        ".grid-card, .cert-slide, .timeline-item, .pub-card, .contact-link"
     );
     fadeEls.forEach(el => el.classList.add("fade-in"));
 

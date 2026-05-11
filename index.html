@@ -185,47 +185,96 @@
                 </div>
             </div>
 
-            <!-- Certifications Grid (hidden by default) -->
+            <!-- Certifications Carousel (hidden by default) -->
             <div class="content-grid hidden" id="certs-grid">
-                <div class="cert-card">
-                    <div class="cert-img-wrapper"><img src="" alt="Deep Learning Certificate" id="cert-dl"></div>
-                    <div class="cert-inner">
-                        <h4>Deep Learning Specialization</h4>
-                        <p>DeepLearning.AI / Andrew Ng — 2025</p>
-                        <p class="cert-detail">5 courses: DNNs, CNNs, Sequence Models, ML Strategy, NLP</p>
-                    </div>
+                <div class="cert-carousel-wrapper">
+                    <!-- Arrow: Prev -->
+                    <button class="cert-arrow cert-arrow-prev" id="cert-prev" aria-label="Previous certificate">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+
+                    <!-- Slides track -->
+                    <div class="cert-track-viewport">
+                        <div class="cert-track" id="cert-track">
+
+                            <!-- Slide 1 -->
+                            <div class="cert-slide">
+                                <div class="cert-slide-img-wrap">
+                                    <img src="" alt="Deep Learning Certificate" id="cert-dl">
+                                </div>
+                                <div class="cert-slide-body">
+                                    <h4>Deep Learning Specialization</h4>
+                                    <p class="cert-issuer">DeepLearning.AI / Andrew Ng &mdash; 2025</p>
+                                    <p class="cert-detail">5 courses: DNNs, CNNs, Sequence Models, ML Strategy, NLP</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="cert-slide">
+                                <div class="cert-slide-img-wrap">
+                                    <img src="" alt="Machine Learning Certificate" id="cert-ml">
+                                </div>
+                                <div class="cert-slide-body">
+                                    <h4>Machine Learning Specialization</h4>
+                                    <p class="cert-issuer">DeepLearning.AI / Andrew Ng &mdash; 2024</p>
+                                    <p class="cert-detail">Supervised, unsupervised &amp; reinforcement learning</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="cert-slide">
+                                <div class="cert-slide-img-wrap">
+                                    <img src="" alt="DSP Certificate" id="cert-dsp">
+                                </div>
+                                <div class="cert-slide-body">
+                                    <h4>Digital Signal Processing</h4>
+                                    <p class="cert-issuer">EPFL / Coursera</p>
+                                    <p class="cert-detail">Signal theory, filtering, spectral analysis, DTFT, z-transforms</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="cert-slide">
+                                <div class="cert-slide-img-wrap cert-slide-img-placeholder">
+                                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                </div>
+                                <div class="cert-slide-body">
+                                    <h4>MATLAB &amp; Simulink</h4>
+                                    <p class="cert-issuer">Coursera</p>
+                                    <p class="cert-detail">Model-based design, simulation, algorithm prototyping</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 5 -->
+                            <div class="cert-slide">
+                                <div class="cert-slide-img-wrap">
+                                    <img src="" alt="Kaggle Python Certificate" id="cert-python">
+                                </div>
+                                <div class="cert-slide-body">
+                                    <h4>Python</h4>
+                                    <p class="cert-issuer">Kaggle</p>
+                                    <p class="cert-detail">Data manipulation, pipelines, applied ML</p>
+                                </div>
+                            </div>
+
+                        </div><!-- /cert-track -->
+                    </div><!-- /cert-track-viewport -->
+
+                    <!-- Arrow: Next -->
+                    <button class="cert-arrow cert-arrow-next" id="cert-next" aria-label="Next certificate">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div><!-- /cert-carousel-wrapper -->
+
+                <!-- Dot indicators -->
+                <div class="cert-dots" id="cert-dots">
+                    <span class="cert-dot active" data-index="0"></span>
+                    <span class="cert-dot" data-index="1"></span>
+                    <span class="cert-dot" data-index="2"></span>
+                    <span class="cert-dot" data-index="3"></span>
+                    <span class="cert-dot" data-index="4"></span>
                 </div>
-                <div class="cert-card">
-                    <div class="cert-img-wrapper"><img src="" alt="Machine Learning Certificate" id="cert-ml"></div>
-                    <div class="cert-inner">
-                        <h4>Machine Learning Specialization</h4>
-                        <p>DeepLearning.AI / Andrew Ng — 2024</p>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-img-wrapper"><img src="" alt="DSP Certificate" id="cert-dsp"></div>
-                    <div class="cert-inner">
-                        <h4>Digital Signal Processing</h4>
-                        <p>EPFL / Coursera</p>
-                        <p class="cert-detail">Signal theory, filtering, spectral analysis, DTFT, z-transforms</p>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-inner">
-                        <h4>MATLAB &amp; Simulink</h4>
-                        <p>Coursera</p>
-                        <p class="cert-detail">Model-based design, simulation, algorithm prototyping</p>
-                    </div>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-img-wrapper"><img src="" alt="Kaggle Certificate" id="cert-python"></div>
-                    <div class="cert-inner">
-                        <h4>Python</h4>
-                        <p>Kaggle</p>
-                        <p class="cert-detail">Data manipulation, pipelines, applied ML</p>
-                    </div>
-                </div>
-            </div>
+            </div><!-- /certs-grid -->
         </div>
     </section>
 
